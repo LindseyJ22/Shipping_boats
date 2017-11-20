@@ -1,3 +1,18 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user_wrapper{
+	margin: 10px auto 10px auto;
+	background: image-url('sail_boat.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%
+}
+
+.user_form{
+  width: 300px;
+  margin: 10px auto 10px auto;
+}
