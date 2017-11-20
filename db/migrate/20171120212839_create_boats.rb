@@ -8,5 +8,6 @@ class CreateBoats < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :boats, :name,  unique: true
   end
 end
