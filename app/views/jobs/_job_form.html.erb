@@ -1,0 +1,15 @@
+<%= form_with  model: @job do |f| %>
+	<%= f.text_field :job_name, placeholder: 'Job Name', 
+	class: "form-control form_margin" %>
+	<%= f.text_field :containers_needed, placeholder: 'Containers Needed', 
+	class: "form-control form_margin" %>
+	<%= f.text_field :origin, placeholder: 'Origin', 
+	class: "form-control form_margin" %>
+	<%= f.text_field :destination, placeholder: 'Destination', 
+	class: "form-control form_margin" %>
+	<%= f.text_field :cost, placeholder: 'Cost', 
+	class: "form-control form_margin" %>
+	<%= f.text_field :description, placeholder: 'Job Description', 
+	class: "form-control form_margin" %>
+	<%= f.submit class: "btn btn-primary form_margin" %>
+<% end -%>

@@ -1,7 +1,7 @@
 <div class="user_wrapper">
   <div class="user_form">
-    <h2>Sign up</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <h2>Sign up </h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), ) do |f| %>
         <%= devise_error_messages! %>
          
         <div class="field form-group">
@@ -33,6 +33,10 @@
       
         <div class="field form-group">
           <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class: "form-control" %>
+        </div>
+
+        <div>
+          <%= f.file_field :avatar, placeholder: "Your image" %>
         </div>
       
         <div class="actions">
