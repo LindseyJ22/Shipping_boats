@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
+<h1>Users#shows</h1>
+<h3> welcome, <%= current_user.user_name %></h3>
+<%= image_tag current_user.avatar.url(:medium) %>
 <p>Find me in app/views/users/show.html.erb</p>
+<% if user_signed_in? %>
+	<%= link_to "Add Boat", new_boat_path %>
+	<%= link_to "Add Job", new_job_path %>
+<% end %>
+<% current_user.boats.all.reverse.each do |boat| %>
+	<div class="boat_wrapper">
+		<div>
+			Boat Name: <%= boat.name %>
+		</div>
+		<div>
+			Boat Location: <%= boat.location %>
+		</div>
+		<div>
+			Containers: <%= boat.container_amount %>
+		</div>
+		<% if boat.user.id == current_user.id %>
+			<%= link_to "Edit Boat", edit_boat_path(boat)  %>
+			<%= link_to "Delete", boat, method: :delete, remote: true, class: "destroy_boat" %>
+		<% end %>	
+	</div>
+<% end %>
+<% current_user.jobs.all.reverse.each do |job| %>
+	<div class="job_wrapper">
+		<p>Job Name : <%= job.job_name %></p>
+		<p>Job Origin: <%= job.origin %></p>
+		<p>Job Destination: <%= job.destination %></p>
+		<p>Job Cost: <%= job.cost %></p>
+		<p>Job Description:	<%= job.description %></p>
+		<% if job.user.id == current_user.id %>
+			<%= link_to "Edit Job", edit_job_path(job)  %>
+			<%= link_to "Delete", job, method: :delete, remote: true, class: "destroy_job" %>
+		<% end %>	
+	</div>
+<% end %>
