@@ -1,0 +1,22 @@
+<% @boats.all.reverse.each do |boat| %>
+	<div class="boat_wrapper">
+		<%= image_tag boat.avatar.url(:thumb), class: "round_border" %>
+		<div>
+			Boat Name: <%= boat.name %>
+		</div>
+		<div>
+			Boat Location: <%= boat.location %>
+		</div>
+		<div>
+			Containers: <%= boat.container_amount %>
+		</div>
+		<div>Jobs:</div>
+		<% boat.job_boats.each do |job| %>
+				<%= job.job.job_name %><br/>
+		<% end %>
+		<% if boat.user.id == current_user.id %>
+			<%= link_to "Edit", edit_boat_path(boat)  %>
+			<%= link_to "Delete", boat, method: :delete, remote: true, class: "destroy_boat" %>
+		<% end %>	
+	</div>
+<% end %>

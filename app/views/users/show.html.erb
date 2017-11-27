@@ -1,38 +1,20 @@
-<h1>Users#shows</h1>
-<h3> welcome, <%= current_user.user_name %></h3>
-<%= image_tag current_user.avatar.url(:medium) %>
-<p>Find me in app/views/users/show.html.erb</p>
-<% if user_signed_in? %>
-	<%= link_to "Add Boat", new_boat_path %>
-	<%= link_to "Add Job", new_job_path %>
-<% end %>
-<% current_user.boats.all.reverse.each do |boat| %>
-	<div class="boat_wrapper">
-		<div>
-			Boat Name: <%= boat.name %>
-		</div>
-		<div>
-			Boat Location: <%= boat.location %>
-		</div>
-		<div>
-			Containers: <%= boat.container_amount %>
-		</div>
-		<% if boat.user.id == current_user.id %>
-			<%= link_to "Edit Boat", edit_boat_path(boat)  %>
-			<%= link_to "Delete", boat, method: :delete, remote: true, class: "destroy_boat" %>
-		<% end %>	
+<div class="profile_wrapper">
+	<h3> Ahoy, <%= current_user.user_name %>!</h3>
+	<%= image_tag current_user.avatar.url(:medium), class: "round_border" %>
+	<div class="links">
+		<% if user_signed_in? %>
+			<%= link_to "Add Boat", new_boat_path %>
+			<%= link_to "Add Job", new_job_path %>
+		<% end %>
 	</div>
-<% end %>
-<% current_user.jobs.all.reverse.each do |job| %>
-	<div class="job_wrapper">
-		<p>Job Name : <%= job.job_name %></p>
-		<p>Job Origin: <%= job.origin %></p>
-		<p>Job Destination: <%= job.destination %></p>
-		<p>Job Cost: <%= job.cost %></p>
-		<p>Job Description:	<%= job.description %></p>
-		<% if job.user.id == current_user.id %>
-			<%= link_to "Edit Job", edit_job_path(job)  %>
-			<%= link_to "Delete", job, method: :delete, remote: true, class: "destroy_job" %>
-		<% end %>	
+</div>
+<div class="boats_jobs_wrapper">
+	<div class="center_info">
+		<div class="user_boats">My Boats
+			<%= render "boats/user_boats" %>
+		</div>
+		<div class="user_jobs"> My Jobs
+			<%= render "jobs/user_jobs" %>
+		</div>
 	</div>
-<% end %>
+</div>

@@ -1,10 +1,12 @@
 class BoatsController < ApplicationController
+
   def index
     @boats = Boat.all
   end
 
   def new
     @boat = Boat.new
+    @countries = Boat.country_names
   end
 
   def create
@@ -39,6 +41,6 @@ class BoatsController < ApplicationController
     private 
   
   def boat_params
-    params.require(:boat).permit(:name, :container_amount, :location)
+    params.require(:boat).permit(:name, :container_amount, :location, :avatar)
   end
 end

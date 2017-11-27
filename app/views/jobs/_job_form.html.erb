@@ -1,12 +1,17 @@
-<%= form_with  model: @job do |f| %>
+<% if @job.errors.full_messages.any? %>
+	<ul>
+		<% @job.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+<%= form_with  model: @job, local: true do |f| %>
 	<%= f.text_field :job_name, placeholder: 'Job Name', 
 	class: "form-control form_margin" %>
 	<%= f.text_field :containers_needed, placeholder: 'Containers Needed', 
 	class: "form-control form_margin" %>
-	<%= f.text_field :origin, placeholder: 'Origin', 
-	class: "form-control form_margin" %>
-	<%= f.text_field :destination, placeholder: 'Destination', 
-	class: "form-control form_margin" %>
+	<%= f.select :origin, options_for_select(@countries), {include_blank: 'Select Country Origin'}, class: "form-control form_margin" %>
+	<%= f.select :destination, options_for_select(@countries), {include_blank: 'Select Destination'}, class: "form-control form_margin" %>
 	<%= f.text_field :cost, placeholder: 'Cost', 
 	class: "form-control form_margin" %>
 	<%= f.text_field :description, placeholder: 'Job Description', 

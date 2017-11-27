@@ -3,7 +3,10 @@
 	class: "form-control form_margin" %>
 	<%= f.text_field :container_amount, placeholder: 'Container Count', 
 	class: "form-control form_margin" %>
-	<%= f.text_field :location, placeholder: 'Location', 
+	<%= f.select :location, options_for_select(@countries), 
 	class: "form-control form_margin" %>
 	<%= f.submit class: "btn btn-primary form_margin" %>
+	<div>
+    <%= f.file_field :avatar, placeholder: "Your image" %>
+  </div>
 <% end -%>
