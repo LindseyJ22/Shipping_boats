@@ -1,0 +1,2 @@
+module JobBoatsHelper
+end

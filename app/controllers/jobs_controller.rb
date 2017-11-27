@@ -5,15 +5,22 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @countries = Boat.country_names
   end
 
   def create
     @user = current_user
-    @job = current_user.jobs.create(job_params)
-    redirect_to @user
+    @job = current_user.jobs.new(job_params)
+    if @job.save
+      redirect_to @user
+    else 
+      @countries = Boat.country_names
+      render :new 
+    end
   end
 
   def show
+    @job_boat = JobBoat.new
     @jobs = Job.all
   end
 

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
 
- get 'home/index'
+
+  get 'home/index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  resources :job_boats, only: [:create, :destroy]
   resources :users, only: [:index, :show]
   resources :boats
   resources :jobs
