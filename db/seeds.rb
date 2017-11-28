@@ -1,7 +1,32 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!([
+  {email: "bob@hotmail.com", encrypted_password: "$2a$11$SK2.LqNx0CC0Q4lkghf2uO2qw6Y0SgG23Wn..rUDkGLBKdzHpNFZu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2017-11-28 06:01:26", last_sign_in_at: "2017-11-28 05:31:59", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "bob", last_name: "Dobalina", user_name: "Bob The Bomber", avatar_file_name: "man_3.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 4616, avatar_updated_at: "2017-11-28 05:32:22"},
+  {email: "redhook@hotmail.com", encrypted_password: "$2a$11$A7GW6XQoPNrZHHfro9B/9Ol9Zz7pYDjfxAXL76tDY3QQRlByD9o1.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 8, current_sign_in_at: "2017-11-28 17:11:50", last_sign_in_at: "2017-11-28 05:52:53", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Gary", last_name: "Garson", user_name: "Hairy Gary", avatar_file_name: "man_2.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 6051, avatar_updated_at: "2017-11-28 05:53:54"},
+  {email: "herb@hotmail.com", encrypted_password: "$2a$11$VnRRbzQAVSSxxojsF0MhieUTl9F7FTiX1/hNWYErSEUjXOenZDwZy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2017-11-21 17:40:15", last_sign_in_at: "2017-11-21 17:28:07", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Herb", last_name: "Herbson", user_name: "Herby", avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil},
+  {email: "katie@hotmail.com", encrypted_password: "$2a$11$2PyVbFuTupvpEsMLR663QunxM5UlfATLlOxcPWXHRMTz6c6FN999G", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 8, current_sign_in_at: "2017-11-28 05:38:36", last_sign_in_at: "2017-11-28 04:09:19", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "katie", last_name: "katerson", user_name: "Katie", avatar_file_name: "trucker_lady.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 8696, avatar_updated_at: "2017-11-28 04:32:40"},
+  {email: "jerry@hotmail.com", encrypted_password: "$2a$11$6zCmI1V4V06BDPeh4YeTFepYXKveDr7l4mojoJEaRTTNh/9ZJxvL.", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2017-11-28 05:48:03", last_sign_in_at: "2017-11-28 05:30:18", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Jerry", last_name: "Jerrson", user_name: "Jeranomo", avatar_file_name: "man.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 5078, avatar_updated_at: "2017-11-28 05:30:46"},
+  {email: "harvey@hotmail.com", encrypted_password: "$2a$11$H2OfTqZFHZTtacuBjmFU0uvb3JiG9y34z0XIFBf0UcJU/8x1aQM1a", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-11-28 16:50:40", last_sign_in_at: "2017-11-28 16:50:40", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Harvey", last_name: "Hobbs", user_name: "Harv the Bard", avatar_file_name: "harvey.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 15513, avatar_updated_at: "2017-11-28 16:50:40"}
+])
+Boat.create!([
+  {user_id: 1, name: "Bob's Boat", container_amount: 7000, location: "Swaziland", avatar_file_name: "ship_boat_2.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 9181, avatar_updated_at: "2017-11-28 05:32:45"},
+  {user_id: 1, name: "Speed 2", container_amount: 700, location: "United Kingdom", avatar_file_name: nil, avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil},
+  {user_id: 5, name: "Da Boat", container_amount: 200, location: "Germany", avatar_file_name: "ship_boat.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 8569, avatar_updated_at: "2017-11-28 05:45:29"},
+  {user_id: 6, name: "The Cracken", container_amount: 700, location: "Greenland", avatar_file_name: "boat_2.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 10017, avatar_updated_at: "2017-11-28 05:49:09"},
+  {user_id: 3, name: "Fast Fish", container_amount: 100, location: "Sweden", avatar_file_name: "boat_4.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 10645, avatar_updated_at: "2017-11-28 05:55:53"},
+  {user_id: 7, name: "Chum Chucker", container_amount: 300, location: "United States of America", avatar_file_name: "chum.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 8697, avatar_updated_at: "2017-11-28 16:53:48"}
+])
+Job.create!([
+  {user_id: 1, description: "I have a bunch of puppies that need to be smuggled out of the UK and to Aruba. No questions please. ", origin: "United Kingdom", destination: "Aruba", containers_needed: 700, cost: "6000.0", job_name: "Bob's Job"},
+  {user_id: 5, description: "What you are shipping might look like drugs, but it is not drugs. Don't ingest them or anything because they are not drugs. Also, avoid the sea cops...not because you are smuggling drugs, but because they are jerks. ", origin: "Italy", destination: "Germany", containers_needed: 600, cost: "10000.0", job_name: "Not a drug smuggle"},
+  {user_id: 6, description: "I've trapped a bunch of care bears and now I'm interested in harnessing their care bear powers.  In order to do that I need to get them to Lebanon.  If you have the boats I need I'll let you pick a care bear power of your own to harness. ", origin: "Zambia", destination: "Lebanon", containers_needed: 800, cost: "9000.0", job_name: "Care Bear Captives"},
+  {user_id: 3, description: "I have long wanted to end the suffering of Swedish fish everywhere. I have a bunch of Swedish fish that I've managed to release from captivity and I need to get them somewhere safe. Please help me restore peace for the fishies. ", origin: "Sweden", destination: "Virgin Islands (US)", containers_needed: 90, cost: "2500.0", job_name: "Swedish Fish Set Free"},
+  {user_id: 7, description: "I've rounded up all those annoying smurfs that keep digging holes around my house.  They're pests!  Anyway, I want to throw them into the volcano Suribachi in Iwo Jima, Japan and be rid of them once and for all. Please help me. ", origin: "United States of America", destination: "Japan", containers_needed: 500, cost: "2000.0", job_name: "Kill the smurfs"}
+])
+JobBoat.create!([
+  {job_id: 20, boat_id: 37},
+  {job_id: 22, boat_id: 37},
+  {job_id: 22, boat_id: 38},
+  {job_id: 23, boat_id: 38},
+  {job_id: 20, boat_id: 39},
+  {job_id: 24, boat_id: 40},
+  {job_id: 24, boat_id: 38}
+])
