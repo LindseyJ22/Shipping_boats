@@ -1,0 +1,9 @@
+$('#' + window.job_section).find('.booking_wrapper').append("<%= j render @job_boat %>");
+var count = $('#' + window.job_section).find('.booking').last().data('count')
+var job_id = $('#' + window.job_section).find('.booking').last().data('job_id')
+var $job_count = $('#' + job_id + "_container")
+var newNumber = parseInt($job_count.html()) - count
+if (newNumber < 0 ){
+	newNumber = 0
+}
+$job_count.html(newNumber)

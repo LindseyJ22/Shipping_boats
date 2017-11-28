@@ -4,3 +4,6 @@
 $(document).on 'turbolinks:load', ->
 	$('.destroy_boat').on 'ajax:success', ->
 		$(this).closest('.boat_wrapper').remove()
+
+	$('.job_boat_form').on 'submit', ->
+		window.job_section = $(this).closest('.boat').attr('id')

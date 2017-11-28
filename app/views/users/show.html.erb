@@ -1,20 +1,31 @@
-<div class="profile_wrapper">
-	<h3> Ahoy, <%= current_user.user_name %>!</h3>
-	<%= image_tag current_user.avatar.url(:medium), class: "round_border" %>
-	<div class="links">
-		<% if user_signed_in? %>
-			<%= link_to "Add Boat", new_boat_path %>
-			<%= link_to "Add Job", new_job_path %>
-		<% end %>
-	</div>
-</div>
-<div class="boats_jobs_wrapper">
-	<div class="center_info">
-		<div class="user_boats">My Boats
-			<%= render "boats/user_boats" %>
-		</div>
-		<div class="user_jobs"> My Jobs
-			<%= render "jobs/user_jobs" %>
+<body class="user_background">
+	<div class="profile_wrapper">
+		<h3> Ahoy, <%= current_user.user_name %>!</h3>
+		<%= image_tag current_user.avatar.url(:medium), class: "round_border" %>
+		<div class="links">
+			<% if user_signed_in? %>
+				<%= link_to "Add Boat", new_boat_path, class: "add_boat_link" %>
+				<%= link_to "Add Job", new_job_path, class: "add_job_link" %>
+			<% end %>
 		</div>
 	</div>
-</div>
+	<div class="boats_jobs_wrapper">
+		<div class="center_boats">
+			<div class="user_boats">
+				<h3 class="white_text">My Boats</h3>
+			<% current_user.boats.all.reverse.each do |boat| %>
+				<%= render boat %>
+				<% end %>
+			</div>
+		</div>
+		<%= image_tag("main.png", :alt => "rss feed", :size => '400x380', class: "main_image") %>
+		<div class="center_jobs"
+			<div class="user_jobs"> 
+				<h3 class="white_text">My Jobs</h3>
+				<% current_user.jobs.all.reverse.each do |job| %>
+					<%= render job %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>

@@ -10,10 +10,14 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @boat = current_user.boats.create(boat_params)
-    redirect_to @user
-
+    @user = current_user
+    if @boat.save
+      redirect_to @user
+    else 
+      @countries = Boat.country_names
+      render :new 
+    end
   end
 
   def show
@@ -23,6 +27,7 @@ class BoatsController < ApplicationController
 
   def edit
     @boat = Boat.find(params[:id])
+    @countries = Boat.country_names
   end
 
   def update

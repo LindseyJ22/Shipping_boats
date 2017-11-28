@@ -23,18 +23,107 @@
   text-align: center;
   background: aliceblue;
   padding: 30px;
+  border-radius: 50px;
 }
 
 .boats_jobs_wrapper{
-  width: 1000px;
+  width: 1200px;
   height: 800px;
   margin: 10px auto 10px auto;
   text-align: center;
 }
 
-.center_info{
-  width: 629px;
+.center_boats{
   margin: 0 auto 0 auto;
   height: 700px;
   overflow: scroll;
+  float: left;
+}
+
+.center_jobs{
+  margin: 0 auto 0 auto;
+  height: 700px;
+  float: right;
+  overflow: scroll;
+}
+
+.user_background{
+  background: image-url('ocean.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.white_text{
+  color: white;
+}
+
+.heading_text{
+  width: 1300px;
+  text-align: center;
+}
+
+.margin_bottom{
+  margin-bottom: 10px;
+}
+
+.links{
+  background: white;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.registration_body{
+  background: rgb(208,228,247); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(208,228,247,1) 0%, rgba(115,177,231,1) 24%, rgba(10,119,213,1) 50%, rgba(83,159,225,1) 79%, rgba(135,188,234,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+}
+
+.edit_user_wrapper{
+  margin: 10px auto 10px auto;
+  background: rgb(225,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(253,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+  padding: 50px;
+  width: 700px;
+  height: 1005px;
+  border-radius: 50%;
+}
+
+.cancel_account{
+  float: right;
+  margin-right: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: rgb(225,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(253,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+}
+
+.add_boat_link{
+  position: relative;
+  left: -85px;
+  font-weight: bolder;
+}
+
+.add_job_link{
+  position: relative;
+  left: 69px;
+  font-weight: bolder;
+}
+
+.heading{
+  width: 1300px;
+  text-align: center;
+}
+
+.main_image{
+  position: relative;
+  top: 100px;
 }

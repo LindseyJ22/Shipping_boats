@@ -1,0 +1,29 @@
+<div class="boat_wrapper boat" id="boat-<%= boat.id %>">
+	<%= image_tag boat.avatar.url(:thumb), class: "round_border" %>
+	<div class="boat_info_wrapper">
+		<p class="text_info">
+			<strong>Boat Name:</strong> <%= boat.name %>
+		</p>
+		<p class="text_info">
+			<strong>Belongs To:</strong> <%= boat.user.user_name %>
+		</p>
+		<p class="text_info">
+			<strong>Boat Location:</strong> <%= boat.location %>
+		</p>
+		<p class="text_info">
+			<strong>Containers:</strong> <%= boat.container_amount %>
+		</p>
+		<p class="text_info">
+			<strong>Jobs:</strong>
+			<ul class="text_info">
+				<% boat.job_boats.each do |job| %>
+					<li><%= job.job.job_name %></li>
+				<% end %>
+			</ul>
+			<% if boat.user.id == current_user.id %>
+				<%= link_to "Edit Boat", edit_boat_path(boat), class: "edit_boat_link"  %>
+				<%= link_to "Delete Boat", boat, method: :delete, remote: true, class: "destroy_boat delete_boat_link" %>
+			<% end %>
+		</p>
+	</div>
+</div>

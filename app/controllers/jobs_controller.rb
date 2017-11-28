@@ -26,6 +26,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+    @countries = Boat.country_names
   end
 
   def update

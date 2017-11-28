@@ -7,8 +7,53 @@
   text-align: center;
   margin: 10px 0 0 10px;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .user_boats{
 	float: left;
+}
+
+.new_form{
+  width: 400px;
+  position: relative;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new_wrapper{
+	margin: 10px auto 10px auto;
+	background: rgb(225,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(253,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+  padding: 50px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%
+}
+
+.center_text{
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.boat_info_wrapper{
+  background: #90cae6;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.edit_boat_link{
+  position: relative;
+  left: -51px;
+  font-weight: bolder;
+}
+
+.delete_boat_link{
+	position: relative;
+	left: 51px;
+	font-weight: bolder;
 }
