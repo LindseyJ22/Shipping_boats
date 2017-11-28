@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+  	@boats = Boat.all
   	@job_boat = JobBoat.new
   	@boat = Boat.new
   end

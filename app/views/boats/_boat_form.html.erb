@@ -1,12 +1,20 @@
-<%= form_with  model: @boat do |f| %>
+<% if @boat.errors.full_messages.any? %>
+	<ul>
+		<% @boat.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+		<% end %>
+	</ul>
+<% end %>
+<%= form_with  model: @boat, local: true do |f| %>
 	<%= f.text_field :name, placeholder: 'Boat Name', 
-	class: "form-control form_margin" %>
+	class: "form-control form_margin margin_bottom" %>
 	<%= f.text_field :container_amount, placeholder: 'Container Count', 
-	class: "form-control form_margin" %>
-	<%= f.select :location, options_for_select(@countries), 
-	class: "form-control form_margin" %>
-	<%= f.submit class: "btn btn-primary form_margin" %>
+	class: "form-control form_margin margin_bottom" %>
+	<%= f.select :location, options_for_select(@countries), {include_blank: 'Location'},
+	class: "form-control form_margin margin_bottom" %>
+	<%= f.submit class: "btn btn-primary form_margin margin_bottom" %>
 	<div>
+		Choose an image
     <%= f.file_field :avatar, placeholder: "Your image" %>
   </div>
 <% end -%>

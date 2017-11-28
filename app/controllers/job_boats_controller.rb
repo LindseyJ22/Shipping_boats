@@ -2,8 +2,12 @@ class JobBoatsController < ApplicationController
  
 
   def create
+   respond_to do |format|
     @job_boat = JobBoat.create(job_boat_params)
-    redirect_to current_user
+    @boats = Boat.all
+    @jobs = Job.all
+    format.js
+   end
   end
 
   def destroy
@@ -15,7 +19,6 @@ class JobBoatsController < ApplicationController
   end
 
     private 
-  
   def job_boat_params
     params.require(:job_boat).permit(:boat_id, :job_id)
   end

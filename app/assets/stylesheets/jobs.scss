@@ -2,13 +2,38 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .job_wrapper{
-  background: lawngreen;
+  background: #c5cef9;
   width: 300px;
   text-align: center;
   margin: 10px 0 0 10px;
   padding: 20px;
+  border-radius: 20px;
 }
 
 .user_jobs{
-	float: left;
+	float: right;
+}
+
+.text_info{
+	background: white;
+  padding: 5px;
+  border-radius: 10px
+}
+
+.info_wrapper{
+  background: purple;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.edit_job_link{
+  position: relative;
+  left: -61px;
+  font-weight: bolder;
+}
+
+.delete_job_link{
+	position: relative;
+  left: 55px;
+  font-weight: bolder;
 }

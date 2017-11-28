@@ -1,13 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-<div class="boats_jobs_wrapper">
-	<div class="center_info">
-		<div class="user_boats">All Boats
-			<%= render "boats/all_boats" %>
+<body class="user_background">
+	<div class="boats_jobs_wrapper">
+		<div class="center_boats">
+			<div class="user_boats">
+				<h3 class="white_text">All Jobs</h3>
+				<% @boats.all.reverse.each do |boat| %>
+					<%= render boat %>
+				<% end %>
+			</div>
 		</div>
-		<div class="user_jobs"> All Jobs
-			<%= render "jobs/all_jobs" %>
+			<%= image_tag("main.png", :alt => "rss feed", :size => '400x380', class: "main_image") %>
+		<div class="center_jobs">
+			<div class="user_jobs">
+				<h3 class="white_text">All Jobs</h3>
+				<% @jobs.all.reverse.each do |job| %>
+					<%= render job %>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>
+</body>

@@ -1,0 +1,48 @@
+<div class="job_wrapper job" id="job-<%= job.id %>">
+	<div class="info_wrapper">
+		<p class="text_info">
+			<strong>Job Name:</strong> <%= job.job_name %>
+		</p>
+		<p class="text_info">
+			<strong>Created by:</strong> <%= job.user.user_name %> 
+		</p>
+		<p class="text_info">
+			<strong>Containers needed:</strong> <%= job.containers_needed %>
+		</p>
+		<p class="text_info">
+			<strong>Job Origin:</strong> <%= job.origin %>
+		</p>
+		<p class="text_info">
+			<strong>Job Destination:</strong> <%= job.destination %>
+		</p>
+		<p class="text_info">
+			<strong>Job Cost:</strong> <%= job.cost %>
+		</p>
+		<p class="text_info"> 
+			<strong>Job Description:</strong>	<%= job.description %>
+		</p>
+	</div>
+	<% if job.user.id == current_user.id %>
+		<%= link_to "Edit Job", edit_job_path(job), class: "edit_job_link" %>
+		<%= link_to "Delete Job", job, method: :delete, remote: true, class: "destroy_job delete_job_link" %>
+		<% if current_user %>
+			<h3>Book a Boat</h3>
+			<%= form_with model: @job_boat, class: "job_boat_form" do |f| %>
+				<%= f.hidden_field :job_id, value: job.id %>
+				<%= f.select :boat_id,  options_for_select(Boat.all.map{|boat| ["#{boat.name}  | cont. #{boat.container_amount}",  boat.id]}.sort), {include_blank: 'select boat'}, class: "form-control" %>
+				<%= f.submit class: "btn btn-primary book_boat"%>
+			<% end %>
+		<h3>Booked Boats</h3>
+		<% end %>	
+		<% container_count = 0 %>
+		<div class="booking_wrapper">
+			<% job.job_boats.each do |job_boat| %>
+				<%= render job_boat %>
+				<% container_count = job_boat.boat.container_amount + container_count %>
+			<% end %>
+		</div>
+		<p>
+			<strong>containers remaining:</strong> <span id=<%= "#{job.id}_container"%> class="container_count"><%= job.containers_needed - container_count %></span>
+		</p>
+	<% end %>	
+</div>
