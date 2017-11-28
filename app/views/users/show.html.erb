@@ -1,7 +1,7 @@
 <body class="user_background">
 	<div class="profile_wrapper">
 		<h3> Ahoy, <%= current_user.user_name %>!</h3>
-		<%= image_tag current_user.avatar.url(:medium), class: "round_border" %>
+		<%= image_tag current_user.avatar.url(:medium), class: "round_border margin_bottom" %>
 		<div class="links">
 			<% if user_signed_in? %>
 				<%= link_to "Add Boat", new_boat_path, class: "add_boat_link" %>
