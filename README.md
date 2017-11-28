@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This is a shipping application meant to help job creators and boat owners
+find ships for their jobs and find jobs for their ships. 
+	The user will first sign in and create an account that they can 
+later login with. Once signed in the user can create a job or add their
+boat that they can then assign to a job. If the user no long wants the job or boat 
+that they created they can remove either one. They can also view other jobs
+and other boats that users have created in the view all page. 
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+\
