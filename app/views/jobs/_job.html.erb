@@ -1,5 +1,6 @@
 <div class="job_wrapper job" id="job-<%= job.id %>">
 	<div class="info_wrapper">
+			<%= image_tag job.user.avatar.url(:thumb), class: "round_border margin_bottom" %>
 		<p class="text_info">
 			<strong>Job Name:</strong> <%= job.job_name %>
 		</p>
@@ -16,7 +17,7 @@
 			<strong>Job Destination:</strong> <%= job.destination %>
 		</p>
 		<p class="text_info">
-			<strong>Job Cost:</strong> <%= job.cost %>
+			<strong>Job Cost:</strong> $<%= job.cost %>
 		</p>
 		<p class="text_info"> 
 			<strong>Job Description:</strong>	<%= job.description %>
@@ -29,7 +30,7 @@
 			<h3>Book a Boat</h3>
 			<%= form_with model: @job_boat, class: "job_boat_form" do |f| %>
 				<%= f.hidden_field :job_id, value: job.id %>
-				<%= f.select :boat_id,  options_for_select(Boat.all.map{|boat| ["#{boat.name}  | cont. #{boat.container_amount}",  boat.id]}.sort), {include_blank: 'select boat'}, class: "form-control" %>
+				<%= f.select :boat_id,  options_for_select(Boat.all.map{|boat| ["#{boat.name}  | cont. #{boat.container_amount}",  boat.id]}.sort), {include_blank: 'select boat'}, class: "form-control margin_bottom" %>
 				<%= f.submit class: "btn btn-primary book_boat"%>
 			<% end %>
 		<h3>Booked Boats</h3>
@@ -41,8 +42,8 @@
 				<% container_count = job_boat.boat.container_amount + container_count %>
 			<% end %>
 		</div>
-		<p>
-			<strong>containers remaining:</strong> <span id=<%= "#{job.id}_container"%> class="container_count"><%= job.containers_needed - container_count %></span>
-		</p>
+		<h4>
+			<strong>Containers Remaining:</strong> <span id=<%= "#{job.id}_container"%> class="container_count"><%= job.containers_needed - container_count %></span>
+		</h4>
 	<% end %>	
 </div>
