@@ -33,7 +33,7 @@ class BoatsController < ApplicationController
   def update
     @boat = Boat.find(params[:id])
     @boat.update(boat_params)
-    redirect_to user_path
+    redirect_to current_user
   end
 
   def destroy

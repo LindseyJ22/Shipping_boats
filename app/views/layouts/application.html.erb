@@ -11,36 +11,32 @@
   </head>
 
   <body>
-  	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-  	<div class="collapse navbar-collapse" id="navbarNav">
-    	<ul class="navbar-nav">
-        <% if user_signed_in? %>
-       		<li class="nav-item active">
-            <%= link_to "Home", user_path(current_user), class: "nav-link" %>	
-       	 	</li>
-            <li class="nav-item">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <% if user_signed_in? %>
+          <a>
+            <%= link_to "Home", user_path(current_user), class: "nav-link" %> 
+          </a>
+            <a>
               <%= link_to "View all", users_path, class: "nav-link" %>
-            </li>
-           <li class="heading">
+            </a>
+           <p class="heading">
              <span class="navbar-brand mb-0 h1 heading">Yaaaaarrr Very Own Boat Service</span>
-           </li>
-            <li class="nav-item edit">
+           </p>
+            <a class="edit">
               <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item logout">
+            </a>
+            <a class="logout">
               <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "nav-link" %>
-            </li>
+            </a>
         <% else %>
-          <li class="nav-item">
+          <a>
             <%= link_to "Log in", new_session_path(resource_name), class: "nav-link" %>  
-          </li>
-          <li class="nav-item">
+          </a>
+          <a>
             <%= link_to "Sign up", new_registration_path(resource_name), class: "nav-link" %>
-          </li>
+          </a>
         <% end %>
-    	</ul>
-  	</div>
-	</nav>
+    </nav>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
