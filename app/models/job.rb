@@ -6,4 +6,5 @@ class Job < ApplicationRecord
 	validates :description, length: { minimum: 50}
 	validates :origin, presence: true
 	validates :destination, presence: true
+	validates :job_name, uniqueness: true
 end

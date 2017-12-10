@@ -7,6 +7,7 @@ class Boat < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates :name, presence: true
   validates :location, presence: true
+  validates :name, uniqueness: true
   
 
   def self.country_names
