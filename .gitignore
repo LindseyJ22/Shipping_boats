@@ -22,3 +22,4 @@ restful_routing.rb
 /yarn-error.log
 
 .byebug_history
+.env
