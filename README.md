@@ -7,7 +7,7 @@ find ships for their jobs and find jobs for their ships.
 later login with. Once signed in the user can create a job or add their
 boat that they can then assign to a job. If the user no long wants the job or boat 
 that they created they can remove either one. They can also view other jobs
-and other boats that users have created in the view all page. 
+and other boats that users have created in the view all page... 
 
 
 \
