@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-	has_many :boats
-	has_many :jobs
+	has_many :boats, dependent: :destroy
+	has_many :jobs, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, 
